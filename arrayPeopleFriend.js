@@ -1,4 +1,4 @@
-const data = [
+   const data = [
     {
         "_id": "61c0a7aee1b34fd049e7ecff",
         "index": 0,
@@ -313,3 +313,19 @@ const removeTagKay = ageSorted.map((item) => {
 });
 
 console.log(removeTagKay);
+
+//   6. Filter only the active users.
+
+const filterActiveUser = removeTagKay.filter((friendsData) => {
+    return friendsData.isActive;
+});
+console.log(filterActiveUser);
+
+//   7. Calculate the total balance available.
+
+const totalBalance = filterActiveUser.reduce((accumulator, current) => {
+    accumulator +=current.balance;
+    return accumulator;
+},0);
+
+console.log(totalBalance);
