@@ -1,5 +1,4 @@
 const data = [
-    const data = [
     {
         "_id": "61c0a7aee1b34fd049e7ecff",
         "index": 0,
@@ -297,11 +296,20 @@ console.log(output);
 
 //   2. Sort by descending order of age.
 
-const ageSorted=output.sort((currVal,nextVal)=>{
-    if(currVal.age<nextVal.age){
+const ageSorted = output.sort((currVal, nextVal) => {
+    if (currVal.age < nextVal.age) {
         return 1;
-    }else{
+    } else {
         return -1;
     }
-})
+});
 console.log(ageSorted);
+
+//   4. Remove the tags key.
+
+const removeTagKay = ageSorted.map((item) => {
+    delete item.tags;
+    return item;
+});
+
+console.log(removeTagKay);
